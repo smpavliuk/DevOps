@@ -1,0 +1,6 @@
+#!/bin/bash
+
+
+cat "$1" | cut -d : -f1,6 | sed -e "$2" | tr : =
+
+# 's/^/Home directory of /'
