@@ -1,0 +1,24 @@
+#!/bin/bash
+
+until [ -z "$1" ]
+do
+
+result=`file "$1" | cut -d " " -f2`
+
+case "$result" in 
+directory ) 
+echo "$1 is directory" ;;
+
+cannot )
+echo "$1 no file with this name" ;;
+
+* ) 
+echo "$1 is a file" ;;
+
+esac
+
+shift
+
+done
+
+exit

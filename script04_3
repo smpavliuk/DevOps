@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "Enter a word:"
+read search_word
+
+echo "Enter a file name"
+
+read file_name
+
+full_file_name=`find ~ -name "$file_name"`
+
+awk "/$search_word/"  $full_file_name | awk 'END { print "Number of lines: " NR }'

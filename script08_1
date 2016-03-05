@@ -1,0 +1,37 @@
+#!/bin/bash
+
+printf "%s\n" "Enter number of operation:" "1 - copiing" "2 - removing" "3 - renaming" "4 - linking"
+
+read input
+
+case $input in
+
+	1) printf "%s\n" "Enter file name to copy" 
+	read file_name
+	printf "%s\n" "Enter name of copy" 
+	read file_copy
+	cp "$file_name" "$file_copy"
+	printf "%s\n" "Operation is done" 
+	;;
+	2) printf "%s\n" "Enter a name of file to remove"
+	read file_name
+	rm "$file_name"
+	printf "%s\n" "Operation is done" 
+	;;
+	3) printf "%s\n" "Enter a name of file to rename"
+        read file_name
+	printf "%s\n" "Enter new name"
+	read new_name
+        mv "$file_name" "$new_name"
+        printf "%s\n" "Operation is done" 
+        ;;
+	4) printf "%s\n" "Enter file to make a link on"
+        read file_name
+        printf "%s\n" "Enter name of link"
+        read link_name
+        link "$file_name" "$link_name"
+        printf "%s\n" "Operation is done" 
+	;;
+esac
+exit
+

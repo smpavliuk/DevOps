@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [ "$#" -lt 1 ]
+then
+	echo "Invalid number of arguments" >&2
+	exit 1
+
+else
+
+	echo "Enter a word or regex pattern"
+	read patt
+
+for file in `echo "$*"`
+do
+sed "/$patt/d" "$file"  > tmp && mv tmp "$file"
+done
+	exit 0
+fi
+

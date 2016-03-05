@@ -1,0 +1,15 @@
+#!/bin/bash
+
+login_date=`who | awk '/'$1'/ { print $3 " " $4 }' | uniq`
+
+login_date_sec=`date +%s --date="$login_date"`
+curr_date_sec=`date +%s`
+
+echo "login $login_date_sec"
+echo "current $curr_date_sec"
+result_h=$(( ($curr_date_sec - $login_date_sec)/3600 ))
+result_m=$(( (($curr_date_sec - $login_date_sec)%3600)/60 ))
+
+echo "User $1 is working for $result_h hours $result_m minutes"
+
+exit

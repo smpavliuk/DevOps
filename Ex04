@@ -1,0 +1,5 @@
+1)  awk -F : '{ print "Home directory of " $1 "=" $6 }' /etc/passwd
+
+2) Скрипт в файле script04_2
+
+3) Скрипт в файле script04_3

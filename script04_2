@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "Enter a word:"
+read search_word
+
+echo "Enter a file name"
+
+read file_name
+
+full_file_name=`find ~ -name "$file_name"`
+result=`grep -c $search_word  $full_file_name`
+echo "Number of lines: $result"

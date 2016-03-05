@@ -1,0 +1,5 @@
+1) file 'my_table'
+2) cat my_table
+4) sort my_table > my_table2
+5) использовал команды dw i p
+6) cat my_table2 

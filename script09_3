@@ -1,0 +1,26 @@
+#!/bin/bash
+
+printf "%s\n" "1 - extract a sub string from a string" "2 - find the length of a given string" "Enter a number of operation"
+
+read operation
+
+case $operation in
+
+	1) printf "%s\n" "Enter your string" 
+	read str_input
+	printf "%s\n" "Enter a number of starting position" 
+	read position_input
+	printf "%s\n" "Enter a length"
+	read length_input 
+	substr_result="${str_input:$position_input:$length_input}"
+	printf "%s\n" "Your substring is - $substr_result" 
+	;;
+	2) printf "%s\n" "Enter your string"
+	read input
+	str_length=${#input}
+	printf "%s\n" "The length is $str_length" 
+	;;
+esac
+
+
+exit

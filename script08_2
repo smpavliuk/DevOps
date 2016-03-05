@@ -1,0 +1,6 @@
+#!/bin/bash
+
+login_date=`who | awk '/'$1'/ { print $3 " " $4 }' | uniq`
+
+printf "%s\n" "User $1 loged in at $login_date"
+exit

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+printf "%s\n" "Enter a word to search"
+
+read search_word
+
+printf "%s\n" "Enter file name"
+
+read file
+
+counter=`grep -oi "\b$search_word\b" "$file" | wc -w`
+
+printf "%s\n" "Your word: $search_word occurres $counter times"
+
+exit

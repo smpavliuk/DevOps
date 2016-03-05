@@ -1,0 +1,12 @@
+#!/bin/bash
+
+result=`diff "$1" "$2"`
+
+if [ -z "$result" ]
+then
+	rm "$2"	
+	printf "%s\n" "Files are the same. That's why $2 was removed"
+else
+	printf "%s\n" "Files are different"
+fi
+exit
